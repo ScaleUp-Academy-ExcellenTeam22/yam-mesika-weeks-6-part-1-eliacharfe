@@ -1,15 +1,7 @@
+from typing import List
 
 
-def upper_first_letter_of_name(name: str) -> str:
-    """
-    Get a name and return the name with the first letter as uppercase instead of lowercase.
-    :param name: A string containing a name.
-    :return: the name with the first letter as uppercase instead of lowercase.
-    """
-    return name[0].upper() + name[1:]
-
-
-def full_names(firsts_names: list[str], lasts_names: list[str], min_length: int = 0) -> list:
+def full_names(firsts_names: List[str], lasts_names: List[str], min_length: int = 0) -> List[str]:
     """
     Gets a list of first names and a list of last names and an optional parameter min_length and return
     a list of all combinations of first names with last names that are greater or equal to the min_length
@@ -20,9 +12,9 @@ def full_names(firsts_names: list[str], lasts_names: list[str], min_length: int 
     :param min_length: (optional) The full names that are greater than this parameter.
     :return: List of all full names.
     """
-    return [upper_first_letter_of_name(first) + " " + upper_first_letter_of_name(last)
+    return [first.capitalize() + " " + last.capitalize()
             for first in firsts_names for last in lasts_names
-            if len(first) + len(last) + 1 >= min_length]
+            if len(first + ' ' + last) >= min_length]
 
 
 if __name__ == '__main__':
