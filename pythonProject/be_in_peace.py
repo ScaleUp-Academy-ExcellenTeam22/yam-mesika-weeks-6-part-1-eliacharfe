@@ -6,7 +6,7 @@ def words_length(sentence):
     :param sentence: The sentence.
     :return: A list of the length of the words in the sentence sent.
     """
-    return [len(x) for x in sentence.split()]
+    return [len(word) for word in sentence.split()]
 
 
 if __name__ == '__main__':
