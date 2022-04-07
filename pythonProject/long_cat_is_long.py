@@ -1,11 +1,12 @@
+from typing import Dict
 
 
-def count_words(some_text):
+def count_words(some_text: str) -> Dict[str, int]:
     """
-    The function gets a text, first cuts all characters that are not letters or whitespaces, then returns
-    a dictionary of the words (as keys) and their length (as value)
-    :param some_text: The text sent
-    :return: A dictionary of the words (as keys) and their length (as value)
+    Get a text, first cut all characters that are not letters or whitespaces, then return
+    a dictionary of the words (as keys) and their length (as value).
+    :param some_text: The text sent.
+    :return: A dictionary of the words (as keys) and their length (as value).
     """
     my_clean_text = ''.join(char for char in some_text if char.isalnum() or char.isspace())
     return {word: len(word) for word in my_clean_text.split()}
