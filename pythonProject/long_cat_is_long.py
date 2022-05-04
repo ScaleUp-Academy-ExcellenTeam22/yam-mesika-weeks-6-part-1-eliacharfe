@@ -1,3 +1,4 @@
+import re
 from typing import Dict
 
 
@@ -8,7 +9,7 @@ def count_words(some_text: str) -> Dict[str, int]:
     :param some_text: The text sent.
     :return: A dictionary of the words (as keys) and their length (as value).
     """
-    my_clean_text = ''.join(char for char in some_text if char.isalnum() or char.isspace())
+    my_clean_text = re.sub('[^A-Za-z\s]+', '', some_text)
     return {word: len(word) for word in my_clean_text.split()}
 
 
