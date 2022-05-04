@@ -1,9 +1,10 @@
 import time
+from collections import Callable
 
 
-def calculate_time_takes_function_to_run(function, *args):
+def calculate_time_takes_function_to_run(function: Callable[[], any], *args: [any]) -> float:
     """
-    A function that check out the time that to the function passed to run on the arguments passed.
+    Check how much time it takes for the function passed to run on the arguments passed.
     :param function: A function.
     :param args: A list of arguments.
     :return: The time that the function passed run on the arguments passed.
