@@ -1,14 +1,15 @@
+from typing import Callable, Iterable, Iterator
 
 
-def my_filter(func, iterable):
+def my_filter(function: Callable[[], any], iterable: Iterable[any]) -> Iterator:
     """
-    A generator function that implement the known function "filter" of python.
-    :param func: A function.
+    Implementation of the function "filter" of python.
+    :param function: A function.
     :param iterable: An iterable.
-    :return: An iterator of the items in the iterable that return True from the function sent.
+    :return: All items in the iterable sent that the function returns true when gets those items.
     """
     for item in iterable:
-        if func(item):
+        if function(item):
             yield item
 
 
