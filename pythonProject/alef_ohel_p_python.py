@@ -1,6 +1,7 @@
+from typing import List
 
 
-def get_letters():
+def get_letters() -> List[str]:
     """
     A function that returns a list of all lowercase and uppercase letters.
     :return: A list of all lowercase and uppercase letters.
