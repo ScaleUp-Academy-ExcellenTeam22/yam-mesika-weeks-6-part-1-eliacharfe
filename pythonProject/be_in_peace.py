@@ -1,10 +1,11 @@
+from typing import Text, List
 
 
-def words_length(sentence):
+def words_length(sentence: [Text, str]) -> List[int]:
     """
-    Function that get a sentence of words and returns a list of the length of the words in it.
+    Function that gets a sentence of words and returns a list of the length of the words in it.
     :param sentence: The sentence.
-    :return: A list of the length of the words in the sentence sent.
+    :return: A list of the lengths of the words in the sentence sent.
     """
     return [len(word) for word in sentence.split()]
 
